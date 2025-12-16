@@ -60,8 +60,12 @@ class ReceiptAnalyzer:
         return self._heuristic_parse(text, filename)
 
     def _ocr(self, image_bytes: bytes) -> str:
-        img = Image.open(BytesIO(image_bytes)).convert("L")
-        return pytesseract.image_to_string(img)
+        try:
+            img = Image.open(BytesIO(image_bytes)).convert("L")
+            return pytesseract.image_to_string(img)
+        except Exception:
+            # Tesseract binary not available; return empty string to trigger heuristic fallback
+            return ""
 
     def _infer_category(self, text: str) -> str:
         low = text.lower()
