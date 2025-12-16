@@ -1,0 +1,5 @@
+curl -sS http://127.0.0.1:8000/health && \
+curl -sS -F "receipt=@/path/to/receipt.jpg" http://127.0.0.1:8000/api/receipt/analyze && \
+curl -sS -X POST http://127.0.0.1:8000/api/coverage/recommend -H "Content-Type: application/json" -d '{"merchant":"Acme","category":"Electronics","items":[{"name":"Gadget","price":299.99,"eligible":true}],"total":299.99}' && \
+curl -sS -X POST http://127.0.0.1:8000/api/flow/confirm -H "Content-Type: application/json" -d '{"receipt":{"merchant":"Acme","category":"Electronics","items":[{"name":"Gadget","price":299.99,"eligible":true}],"total":299.99},"selected":{"coverage_period":"12 months","premium":25.0,"protection_type":"Comprehensive","features":["Damage","Theft"]}}' && \
+curl -sS -X POST http://127.0.0.1:8000/api/chat -H "Content-Type: application/json" -d '{"message":"How does this work?"}'

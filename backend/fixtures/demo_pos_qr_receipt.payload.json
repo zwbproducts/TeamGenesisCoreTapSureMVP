@@ -1,0 +1,14 @@
+{
+  "payload": {
+    "tenant_id": "demo",
+    "transaction_id": "tx_demo_1765619381",
+    "timestamp": 1765619381,
+    "nonce": "nonce_demo_1f488034ccdf9258",
+    "merchant_id": "merchant_demo_001",
+    "plan_id": "plan_demo_12m",
+    "amount_cents": 4999,
+    "currency": "USD"
+  },
+  "token": "TSQR1.eyJhbW91bnRfY2VudHMiOjQ5OTksImN1cnJlbmN5IjoiVVNEIiwibWVyY2hhbnRfaWQiOiJtZXJjaGFudF9kZW1vXzAwMSIsIm5vbmNlIjoibm9uY2VfZGVtb18xZjQ4ODAzNGNjZGY5MjU4IiwicGxhbl9pZCI6InBsYW5fZGVtb18xMm0iLCJ0ZW5hbnRfaWQiOiJkZW1vIiwidGltZXN0YW1wIjoxNzY1NjE5MzgxLCJ0cmFuc2FjdGlvbl9pZCI6InR4X2RlbW9fMTc2NTYxOTM4MSJ9._VB7236_ZAsYTuxscHFJQNXVVPYTyQYIw2QUCzYcZbA",
+  "secret": "dev-secret"
+}
