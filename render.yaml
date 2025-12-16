@@ -3,7 +3,10 @@ services:
     name: tapsure-backend
     env: python
     plan: free
-    buildCommand: "pip install -r backend/requirements.txt"
+    buildCommand: |
+      apt-get update && \
+      apt-get install -y tesseract-ocr libtesseract-dev libleptonica-dev && \
+      pip install -r backend/requirements.txt
     startCommand: "PYTHONPATH=backend uvicorn app.main:app --host 0.0.0.0 --port $PORT"
     autoDeploy: true
     envVars:
@@ -15,7 +18,10 @@ services:
         value: "3600"
       # Replace with your tenant secrets JSON (required for QR auth)
       - key: POS_TENANT_SECRETS
-        value: '{"user1":"secret1","user2":"secret2","user3":"secret3"}'
+        value: '{"demo":"dev-secret","customer":"secret1","merchant":"secret2","insurer":"secret3"}'
+      # Ensure Tesseract knows where to find tessdata (Render base images place it here)
+      - key: TESSDATA_PREFIX
+        value: "/usr/share/tesseract-ocr/5/tessdata"
       # Optional: provide an OpenAI-compatible key/base URL/model for smarter chat
       # - key: OPENAI_API_KEY
       #   value: ""
