@@ -1,3 +1,0 @@
-# RENDER ONLY - This file is used by Render's build system
-# Netlify should ignore this via .netlifyignore
--r backend/requirements.txt
