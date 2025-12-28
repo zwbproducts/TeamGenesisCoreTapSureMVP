@@ -1,5 +1,11 @@
-requirements.txt
 backend/
+*.pyc
+*.pyo
+__pycache__/
+venv/
+.venv/
+env/
+.env
 render.yaml
 Procfile
 start.sh
