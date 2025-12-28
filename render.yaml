@@ -4,7 +4,7 @@ services:
     env: python
     plan: free
     buildCommand: "pip install -r backend/requirements.txt"
-    startCommand: "PYTHONPATH=backend uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    startCommand: "cd backend && PYTHONPATH=. uvicorn app.main:app --host 0.0.0.0 --port $PORT"
     autoDeploy: true
     envVars:
       - key: POS_QR_ENFORCEMENT
@@ -15,19 +15,10 @@ services:
         value: "900"
       - key: POS_QR_NONCE_TTL_SECONDS
         value: "3600"
-      # Replace with your tenant secrets JSON (required for QR auth)
       - key: POS_TENANT_SECRETS
         value: '{"demo":"dev-secret","customer":"secret1","merchant":"secret2","insurer":"secret3"}'
-      # Ensure Tesseract knows where to find tessdata (Render base images place it here)
       - key: TESSDATA_PREFIX
         value: "/usr/share/tesseract-ocr/5/tessdata"
-      # Optional: provide an OpenAI-compatible key/base URL/model for smarter chat
-      # - key: OPENAI_API_KEY
-      #   value: ""
-      # - key: LLM_BASE_URL
-      #   value: ""
-      # - key: LLM_MODEL
-      #   value: "llama3.1:8b"
     healthCheckPath: /health
     repo: https://github.com/turnzero666/TapSureAppDebug
     branch: main
