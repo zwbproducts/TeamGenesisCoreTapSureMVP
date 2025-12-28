@@ -1,3 +1,0 @@
-# This file redirects to backend/requirements.txt for Render
-# See backend/requirements.txt for actual dependencies
--r backend/requirements.txt
