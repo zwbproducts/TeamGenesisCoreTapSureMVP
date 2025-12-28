@@ -3,22 +3,15 @@ services:
     name: tapsure-backend
     env: python
     plan: free
-    buildCommand: "./build.sh"
-    startCommand: "./start.sh"
+    buildCommand: "pip install -r backend-requirements.txt"
+    startCommand: "pip install -r backend-requirements.txt && uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT"
     autoDeploy: true
+    repo: https://github.com/turnzero666/TapSureAppDebug
+    branch: main
     envVars:
+      - key: VITE_API_URL
+        value: "https://tapsureappdebug.onrender.com"
       - key: POS_QR_ENFORCEMENT
         value: "off"
       - key: POS_REQUIRE_QR
         value: "0"
-      - key: POS_QR_MAX_AGE_SECONDS
-        value: "900"
-      - key: POS_QR_NONCE_TTL_SECONDS
-        value: "3600"
-      - key: POS_TENANT_SECRETS
-        value: '{"demo":"dev-secret","customer":"secret1","merchant":"secret2","insurer":"secret3"}'
-      - key: TESSDATA_PREFIX
-        value: "/usr/share/tesseract-ocr/5/tessdata"
-    healthCheckPath: /health
-    repo: https://github.com/turnzero666/TapSureAppDebug
-    branch: main
