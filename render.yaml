@@ -3,7 +3,7 @@ services:
     name: tapsure-backend
     env: python
     plan: free
-    buildCommand: "pip install -r backend/requirements.txt"
+    buildCommand: "./build.sh"
     startCommand: "./start.sh"
     autoDeploy: true
     envVars:
