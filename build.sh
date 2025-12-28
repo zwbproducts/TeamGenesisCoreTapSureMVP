@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e
-echo "Installing Python dependencies from backend/requirements.txt..."
+echo "Installing backend dependencies..."
 pip install -r backend/requirements.txt
-echo "Build complete!"
+echo "Backend dependencies installed!"

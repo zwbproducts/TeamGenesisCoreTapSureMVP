@@ -3,17 +3,23 @@ command = "npm --prefix frontend-v2 run build"
 publish = "frontend-v2/dist"
 functions = "netlify/functions"
 
-# Skip build if only backend files changed
-ignore = "git diff --quiet HEAD^ HEAD -- backend/ Procfile render.yaml start.sh root_app.py build.sh .renderignore || exit 1"
+# Skip build if only backend/Python files changed
+ignore = "git diff --quiet HEAD^ HEAD -- backend/ Procfile render.yaml start.sh root_app.py build.sh .renderignore requirements.txt || exit 1"
 
 [build.environment]
 NODE_VERSION = "18"
+NPM_FLAGS = "--legacy-peer-deps"
 VITE_API_URL = "https://tapsureappdebug.onrender.com"
 VITE_POS_REQUIRE_QR = "0"
-SKIP_PIP = "true"
 
-# Explicitly prevent pip from running
-[[headers]]
-for = "/*"
-[headers.values]
-Cache-Control = "public, max-age=3600"
+# Critical: Tell Netlify this is Node-only, don't detect Python
+[build.environment.PYTHON_VERSION]
+# Explicitly unset/empty to prevent Python detection
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[context.production.environment]
+VITE_API_URL = "https://tapsureappdebug.onrender.com"
