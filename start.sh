@@ -1,0 +1,3 @@
+#!/bin/bash
+# Force uvicorn to start regardless of other configs
+exec uvicorn backend.app.main:app --host 0.0.0.0 --port ${PORT:-8000}
