@@ -3,7 +3,5 @@ command = "npm --prefix frontend-v2 run build"
 publish = "frontend-v2/dist"
 
 [build.environment]
-# The React app calls `${VITE_API_URL}/api/...`.
-# Set `VITE_API_URL` in Netlify environment variables to your deployed backend base URL.
 VITE_API_URL = "https://tapsureappdebug.onrender.com"
 VITE_POS_REQUIRE_QR = "0"
