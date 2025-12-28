@@ -8,7 +8,9 @@ services:
     autoDeploy: true
     envVars:
       - key: POS_QR_ENFORCEMENT
-        value: "on"
+        value: "off"
+      - key: POS_REQUIRE_QR
+        value: "0"
       - key: POS_QR_MAX_AGE_SECONDS
         value: "900"
       - key: POS_QR_NONCE_TTL_SECONDS
@@ -27,5 +29,5 @@ services:
       # - key: LLM_MODEL
       #   value: "llama3.1:8b"
     healthCheckPath: /health
-    repo: https://github.com/zeroturnnew-sudo/TapSure-AI-app-Network
+    repo: https://github.com/turnzero666/TapSureAppDebug
     branch: main
