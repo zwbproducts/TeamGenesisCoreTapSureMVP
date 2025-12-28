@@ -1,12 +1,15 @@
-# Netlify: ignore all Python-related files
+# Ignore ALL Python files - Netlify should not process these
+requirements.txt
 backend/
 *.py
-*.txt
+*.pyc
+__pycache__/
+venv/
+.venv/
+env/
 Procfile
 render.yaml
 start.sh
 root_app.py
 build.sh
-__pycache__/
-.git
-node_modules/
+backend-requirements.txt
