@@ -4,7 +4,7 @@ services:
     env: python
     plan: free
     pythonVersion: 3.13
-    buildCommand: "bash build.sh"
+    buildCommand: "pip install -r python-requirements.txt"
     startCommand: "uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT"
     autoDeploy: true
     envVars:

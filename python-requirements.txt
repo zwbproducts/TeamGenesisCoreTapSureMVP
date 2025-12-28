@@ -1,0 +1,2 @@
+# Root requirements for Render - uses -r to include actual backend deps
+-r backend/requirements.txt
