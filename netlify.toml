@@ -1,7 +1,9 @@
 [build]
 command = "npm --prefix frontend-v2 run build"
 publish = "frontend-v2/dist"
+ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- backend/ requirements.txt Procfile render.yaml start.sh root_app.py build.sh .netlifyignore || exit 1"
 
 [build.environment]
 VITE_API_URL = "https://tapsureappdebug.onrender.com"
 VITE_POS_REQUIRE_QR = "0"
+SKIP_PIP = "true"
