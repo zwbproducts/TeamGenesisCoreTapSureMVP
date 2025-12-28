@@ -10,5 +10,4 @@ pytesseract==0.3.13
 opencv-python-headless==4.10.0.84
 numpy==2.1.3
 qrcode==7.4.2
-\n# Ensure gunicorn available for Render legacy start command
 gunicorn==21.2.0
