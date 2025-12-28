@@ -1,6 +1,8 @@
 [build]
 command = "npm --prefix frontend-v2 run build"
 publish = "frontend-v2/dist"
+# Skip build if only backend files changed
+ignore = "git diff --quiet HEAD^ HEAD -- backend/ Procfile render.yaml start.sh root_app.py build.sh requirements.txt || exit 1"
 
 [build.environment]
 NODE_VERSION = "18"
