@@ -4,7 +4,7 @@ services:
     env: python
     plan: free
     buildCommand: "pip install -r backend/requirements.txt"
-    startCommand: "cd backend && PYTHONPATH=. uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    startCommand: "PYTHONPATH=/app/backend uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT"
     autoDeploy: true
     envVars:
       - key: POS_QR_ENFORCEMENT
