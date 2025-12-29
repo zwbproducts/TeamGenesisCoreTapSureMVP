@@ -9,7 +9,7 @@ services:
     autoDeploy: true
     envVars:
       - key: POS_TENANT_SECRETS
-        value: '{"client":"client-secret","merchant":"merchant-secret","insurer":"insurer-secret"}'
+        value: '{"client":"dev-client","merchant":"dev-merchant","insurer":"dev-insurer"}'
       - key: POS_QR_ENFORCEMENT
         value: "off"
       - key: POS_QR_MAX_AGE_SECONDS
