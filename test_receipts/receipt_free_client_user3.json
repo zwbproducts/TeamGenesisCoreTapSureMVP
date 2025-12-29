@@ -1,0 +1,17 @@
+{
+  "user_id": "free_client_user3",
+  "tenant_id": "client",
+  "tier": "free",
+  "transaction_id": "tx_free_client_003",
+  "timestamp": 1767018624,
+  "nonce": "nonce_free_client_user3_1767018624",
+  "actor_role": "customer",
+  "merchant_id": "merchant_client",
+  "plan_id": "plan_free",
+  "max_claims": 2,
+  "coverage_percent": 50,
+  "merchant": "Best Buy",
+  "product": "Sporting Goods",
+  "amount_cents": 8999,
+  "currency": "USD"
+}

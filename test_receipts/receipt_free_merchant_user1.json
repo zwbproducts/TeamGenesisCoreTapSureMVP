@@ -1,0 +1,17 @@
+{
+  "user_id": "free_merchant_user1",
+  "tenant_id": "merchant",
+  "tier": "free",
+  "transaction_id": "tx_free_merchant_001",
+  "timestamp": 1767018625,
+  "nonce": "nonce_free_merchant_user1_1767018625",
+  "actor_role": "customer",
+  "merchant_id": "merchant_merchant",
+  "plan_id": "plan_free",
+  "max_claims": 2,
+  "coverage_percent": 50,
+  "merchant": "Walmart",
+  "product": "Clothing",
+  "amount_cents": 12450,
+  "currency": "USD"
+}

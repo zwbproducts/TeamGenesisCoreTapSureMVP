@@ -1,0 +1,17 @@
+{
+  "user_id": "premium_insurer_user1",
+  "tenant_id": "insurer",
+  "tier": "premium",
+  "transaction_id": "tx_premium_insurer_001",
+  "timestamp": 1767018628,
+  "nonce": "nonce_premium_insurer_user1_1767018628",
+  "actor_role": "customer",
+  "merchant_id": "merchant_insurer",
+  "plan_id": "plan_premium",
+  "max_claims": 10,
+  "coverage_percent": 100,
+  "merchant": "Walmart",
+  "product": "Groceries",
+  "amount_cents": 8745,
+  "currency": "USD"
+}

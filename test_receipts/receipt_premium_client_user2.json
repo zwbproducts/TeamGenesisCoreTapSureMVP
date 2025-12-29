@@ -1,0 +1,17 @@
+{
+  "user_id": "premium_client_user2",
+  "tenant_id": "client",
+  "tier": "premium",
+  "transaction_id": "tx_premium_client_002",
+  "timestamp": 1767018627,
+  "nonce": "nonce_premium_client_user2_1767018627",
+  "actor_role": "customer",
+  "merchant_id": "merchant_client",
+  "plan_id": "plan_premium",
+  "max_claims": 10,
+  "coverage_percent": 100,
+  "merchant": "Target",
+  "product": "Sporting Goods",
+  "amount_cents": 8999,
+  "currency": "USD"
+}

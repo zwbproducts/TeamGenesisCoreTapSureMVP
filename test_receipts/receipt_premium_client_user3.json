@@ -1,0 +1,17 @@
+{
+  "user_id": "premium_client_user3",
+  "tenant_id": "client",
+  "tier": "premium",
+  "transaction_id": "tx_premium_client_003",
+  "timestamp": 1767018627,
+  "nonce": "nonce_premium_client_user3_1767018627",
+  "actor_role": "customer",
+  "merchant_id": "merchant_client",
+  "plan_id": "plan_premium",
+  "max_claims": 10,
+  "coverage_percent": 100,
+  "merchant": "Best Buy",
+  "product": "Furniture",
+  "amount_cents": 49900,
+  "currency": "USD"
+}

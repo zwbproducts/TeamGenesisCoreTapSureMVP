@@ -1,0 +1,17 @@
+{
+  "user_id": "medium_insurer_user3",
+  "tenant_id": "insurer",
+  "tier": "medium",
+  "transaction_id": "tx_medium_insurer_003",
+  "timestamp": 1767018627,
+  "nonce": "nonce_medium_insurer_user3_1767018627",
+  "actor_role": "customer",
+  "merchant_id": "merchant_insurer",
+  "plan_id": "plan_medium",
+  "max_claims": 5,
+  "coverage_percent": 75,
+  "merchant": "Best Buy",
+  "product": "Clothing",
+  "amount_cents": 12450,
+  "currency": "USD"
+}

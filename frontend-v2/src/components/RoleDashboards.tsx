@@ -1,95 +1,91 @@
-import { useMemo } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
-import { Button } from './ui/button'
-import { Badge } from './ui/badge'
+import { useState } from 'react'
 import { useInsuranceStore } from '../lib/store'
 import type { ActorRole } from '../lib/schemas'
-
-function formatPct(v: number) {
-  const clamped = Math.max(0, Math.min(1, v))
-  return `${Math.round(clamped * 100)}%`
-}
+import { CustomerDashboard } from './dashboards/CustomerDashboard'
+import { MerchantDashboard } from './dashboards/MerchantDashboard'
+import { InsurerDashboard } from './dashboards/InsurerDashboard'
+import { Button } from './ui/button'
 
 export function RoleDashboards() {
   const { receipt, actorRole, setActorRole, policy } = useInsuranceStore()
-
+  const [isMinimized, setIsMinimized] = useState(false)
+  
   const verified = Boolean(receipt?.pos_qr_verified)
   const role: ActorRole = (actorRole ?? 'customer') as ActorRole
 
-  const payload = receipt?.pos_qr_payload
-
-  const header = useMemo(() => {
-    if (!receipt) return null
-    return {
-      trust: `${receipt.trust_rating}/5 (${formatPct(receipt.trust_confidence)})`,
-      qr: verified ? 'QR verified' : 'QR not verified',
-    }
-  }, [receipt, verified])
-
   if (!receipt || !verified) return null
 
+  const roleIcons = {
+    customer: '👤',
+    merchant: '🏪',
+    insurer: '🏢',
+  }
+
+  const roleLabels = {
+    customer: 'Customer Portal',
+    merchant: 'Merchant Dashboard',
+    insurer: 'Insurer Analytics',
+  }
+
+  const roleColors = {
+    customer: 'bg-blue-600 hover:bg-blue-700',
+    merchant: 'bg-orange-600 hover:bg-orange-700',
+    insurer: 'bg-red-600 hover:bg-red-700',
+  }
+
   return (
-    <Card className="shadow-lg border-2">
-      <CardHeader>
-        <div className="flex items-center justify-between gap-3">
-          <CardTitle>Dashboards</CardTitle>
-          <div className="flex items-center gap-2">
-            <Badge variant={verified ? 'success' : 'warning'}>{header?.qr}</Badge>
-            <Badge variant="secondary">Trust {header?.trust}</Badge>
+    <div className="space-y-4">
+      {/* Dashboard Header */}
+      <div className="sticky top-16 z-20 bg-white/95 backdrop-blur-sm border-b border-gray-200 rounded-lg shadow-sm p-4">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-3">
+            <span className="text-3xl">{roleIcons[role]}</span>
+            <div>
+              <h2 className="text-xl font-bold text-gray-800">{roleLabels[role]}</h2>
+              <p className="text-xs text-gray-500">
+                {verified && <span className="text-green-600 font-semibold">✓ QR Verified • Real-time Analytics</span>}
+              </p>
+            </div>
           </div>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setIsMinimized(!isMinimized)}
+            className="text-gray-600 hover:text-gray-800"
+          >
+            {isMinimized ? '▼' : '▲'}
+          </Button>
         </div>
-      </CardHeader>
-      <CardContent className="space-y-4">
+
+        {/* Role Switcher Buttons */}
         <div className="flex flex-wrap gap-2">
           {(['customer', 'merchant', 'insurer'] as ActorRole[]).map((r) => (
             <Button
               key={r}
               type="button"
               size="sm"
-              variant={role === r ? 'primary' : 'secondary'}
               onClick={() => setActorRole(r)}
-              aria-label={`Select ${r} dashboard`}
+              className={`${
+                role === r
+                  ? roleColors[r] + ' text-white'
+                  : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+              } transition-all duration-200`}
             >
-              {r}
+              <span className="mr-2">{roleIcons[r]}</span>
+              {roleLabels[r].split(' ')[0]}
             </Button>
           ))}
         </div>
+      </div>
 
-        {role === 'merchant' && (
-          <div className="space-y-2">
-            <p className="text-sm text-gray-600">Merchant view (from verified QR payload)</p>
-            <div className="grid gap-2 text-sm">
-              <div><span className="text-gray-500">merchant_id:</span> {payload?.merchant_id ?? '—'}</div>
-              <div><span className="text-gray-500">transaction_id:</span> {payload?.transaction_id ?? '—'}</div>
-              <div><span className="text-gray-500">plan_id:</span> {payload?.plan_id ?? '—'}</div>
-              <div><span className="text-gray-500">amount:</span> {payload?.amount_cents != null ? `${(payload.amount_cents / 100).toFixed(2)} ${payload.currency ?? ''}` : '—'}</div>
-            </div>
-          </div>
-        )}
-
-        {role === 'customer' && (
-          <div className="space-y-2">
-            <p className="text-sm text-gray-600">Customer view</p>
-            <div className="grid gap-2 text-sm">
-              <div><span className="text-gray-500">merchant:</span> {receipt.merchant}</div>
-              <div><span className="text-gray-500">eligibility:</span> {receipt.eligibility}</div>
-              <div><span className="text-gray-500">policy:</span> {policy ? `${policy.status} (${policy.policy_id})` : '—'}</div>
-            </div>
-          </div>
-        )}
-
-        {role === 'insurer' && (
-          <div className="space-y-2">
-            <p className="text-sm text-gray-600">Insurer view (verification + risk signals)</p>
-            <div className="grid gap-2 text-sm">
-              <div><span className="text-gray-500">tenant_id:</span> {payload?.tenant_id ?? '—'}</div>
-              <div><span className="text-gray-500">qr_reason:</span> {receipt.pos_qr_reason ?? 'ok'}</div>
-              <div><span className="text-gray-500">analysis_confidence:</span> {formatPct(receipt.confidence)}</div>
-              <div><span className="text-gray-500">trust:</span> {receipt.trust_rating}/5 ({formatPct(receipt.trust_confidence)})</div>
-            </div>
-          </div>
-        )}
-      </CardContent>
-    </Card>
+      {/* Dashboard Content */}
+      {!isMinimized && (
+        <div className="animate-in fade-in slide-in-from-top duration-300">
+          {role === 'customer' && <CustomerDashboard receipt={receipt} policy={policy} />}
+          {role === 'merchant' && <MerchantDashboard receipt={receipt} />}
+          {role === 'insurer' && <InsurerDashboard receipt={receipt} />}
+        </div>
+      )}
+    </div>
   )
 }

@@ -1,0 +1,17 @@
+{
+  "user_id": "free_insurer_user1",
+  "tenant_id": "insurer",
+  "tier": "free",
+  "transaction_id": "tx_free_insurer_001",
+  "timestamp": 1767018625,
+  "nonce": "nonce_free_insurer_user1_1767018625",
+  "actor_role": "customer",
+  "merchant_id": "merchant_insurer",
+  "plan_id": "plan_free",
+  "max_claims": 2,
+  "coverage_percent": 50,
+  "merchant": "Walmart",
+  "product": "Furniture",
+  "amount_cents": 49900,
+  "currency": "USD"
+}

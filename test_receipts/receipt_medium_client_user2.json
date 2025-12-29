@@ -1,0 +1,17 @@
+{
+  "user_id": "medium_client_user2",
+  "tenant_id": "client",
+  "tier": "medium",
+  "transaction_id": "tx_medium_client_002",
+  "timestamp": 1767018626,
+  "nonce": "nonce_medium_client_user2_1767018626",
+  "actor_role": "customer",
+  "merchant_id": "merchant_client",
+  "plan_id": "plan_medium",
+  "max_claims": 5,
+  "coverage_percent": 75,
+  "merchant": "Target",
+  "product": "Clothing",
+  "amount_cents": 12450,
+  "currency": "USD"
+}

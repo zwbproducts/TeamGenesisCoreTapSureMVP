@@ -1,0 +1,17 @@
+{
+  "user_id": "premium_insurer_user3",
+  "tenant_id": "insurer",
+  "tier": "premium",
+  "transaction_id": "tx_premium_insurer_003",
+  "timestamp": 1767018628,
+  "nonce": "nonce_premium_insurer_user3_1767018628",
+  "actor_role": "customer",
+  "merchant_id": "merchant_insurer",
+  "plan_id": "plan_premium",
+  "max_claims": 10,
+  "coverage_percent": 100,
+  "merchant": "Best Buy",
+  "product": "Sporting Goods",
+  "amount_cents": 8999,
+  "currency": "USD"
+}

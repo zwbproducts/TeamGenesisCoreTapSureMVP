@@ -1,0 +1,17 @@
+{
+  "user_id": "free_insurer_user3",
+  "tenant_id": "insurer",
+  "tier": "free",
+  "transaction_id": "tx_free_insurer_003",
+  "timestamp": 1767018625,
+  "nonce": "nonce_free_insurer_user3_1767018625",
+  "actor_role": "customer",
+  "merchant_id": "merchant_insurer",
+  "plan_id": "plan_free",
+  "max_claims": 2,
+  "coverage_percent": 50,
+  "merchant": "Best Buy",
+  "product": "Pharmacy",
+  "amount_cents": 4599,
+  "currency": "USD"
+}

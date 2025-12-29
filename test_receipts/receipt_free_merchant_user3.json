@@ -1,0 +1,17 @@
+{
+  "user_id": "free_merchant_user3",
+  "tenant_id": "merchant",
+  "tier": "free",
+  "transaction_id": "tx_free_merchant_003",
+  "timestamp": 1767018625,
+  "nonce": "nonce_free_merchant_user3_1767018625",
+  "actor_role": "customer",
+  "merchant_id": "merchant_merchant",
+  "plan_id": "plan_free",
+  "max_claims": 2,
+  "coverage_percent": 50,
+  "merchant": "Best Buy",
+  "product": "Electronics",
+  "amount_cents": 29999,
+  "currency": "USD"
+}

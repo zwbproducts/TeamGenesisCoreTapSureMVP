@@ -1,0 +1,17 @@
+{
+  "user_id": "medium_client_user1",
+  "tenant_id": "client",
+  "tier": "medium",
+  "transaction_id": "tx_medium_client_001",
+  "timestamp": 1767018626,
+  "nonce": "nonce_medium_client_user1_1767018626",
+  "actor_role": "customer",
+  "merchant_id": "merchant_client",
+  "plan_id": "plan_medium",
+  "max_claims": 5,
+  "coverage_percent": 75,
+  "merchant": "Walmart",
+  "product": "Home & Garden",
+  "amount_cents": 15622,
+  "currency": "USD"
+}

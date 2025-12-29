@@ -1,0 +1,17 @@
+{
+  "user_id": "premium_merchant_user3",
+  "tenant_id": "merchant",
+  "tier": "premium",
+  "transaction_id": "tx_premium_merchant_003",
+  "timestamp": 1767018628,
+  "nonce": "nonce_premium_merchant_user3_1767018628",
+  "actor_role": "customer",
+  "merchant_id": "merchant_merchant",
+  "plan_id": "plan_premium",
+  "max_claims": 10,
+  "coverage_percent": 100,
+  "merchant": "Best Buy",
+  "product": "Home & Garden",
+  "amount_cents": 15622,
+  "currency": "USD"
+}

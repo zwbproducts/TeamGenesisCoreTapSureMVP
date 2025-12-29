@@ -1,0 +1,17 @@
+{
+  "user_id": "medium_merchant_user2",
+  "tenant_id": "merchant",
+  "tier": "medium",
+  "transaction_id": "tx_medium_merchant_002",
+  "timestamp": 1767018626,
+  "nonce": "nonce_medium_merchant_user2_1767018626",
+  "actor_role": "customer",
+  "merchant_id": "merchant_merchant",
+  "plan_id": "plan_medium",
+  "max_claims": 5,
+  "coverage_percent": 75,
+  "merchant": "Target",
+  "product": "Furniture",
+  "amount_cents": 49900,
+  "currency": "USD"
+}
