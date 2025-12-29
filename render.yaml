@@ -8,7 +8,25 @@ services:
     startCommand: "uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT"
     autoDeploy: true
     envVars:
+      - key: POS_TENANT_SECRETS
+        value: '{"client":"client-secret","merchant":"merchant-secret","insurer":"insurer-secret"}'
       - key: POS_QR_ENFORCEMENT
         value: "off"
+      - key: POS_QR_MAX_AGE_SECONDS
+        value: "900"
+      - key: POS_QR_NONCE_TTL_SECONDS
+        value: "3600"
       - key: POS_REQUIRE_QR
         value: "0"
+      - key: LLM_BASE_URL
+        value: "http://localhost:11434/v1"
+      - key: LLM_API_KEY
+        value: "ollama"
+      - key: LLM_MODEL
+        value: "llama3.1:8b"
+      - key: OPENAI_API_KEY
+        value: ""
+      - key: FRONTEND_ORIGIN
+        value: "https://statuesque-paletas-dd5d09.netlify.app"
+      - key: VITE_API_URL
+        value: "https://tapsureappdebug.onrender.com"
