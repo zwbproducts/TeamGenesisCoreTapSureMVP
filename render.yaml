@@ -11,7 +11,7 @@ services:
       - key: POS_TENANT_SECRETS
         value: '{"client":"dev-client","merchant":"dev-merchant","insurer":"dev-insurer"}'
       - key: POS_QR_ENFORCEMENT
-        value: "off"
+        value: "auto"
       - key: POS_QR_MAX_AGE_SECONDS
         value: "900"
       - key: POS_QR_NONCE_TTL_SECONDS
