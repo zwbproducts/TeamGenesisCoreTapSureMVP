@@ -29,8 +29,8 @@ services:
       - key: OPENAI_API_KEY
         value: ""
       - key: FRONTEND_ORIGIN
-        value: "https://statuesque-paletas-dd5d09.netlify.app"
+        value: "https://harmonious-donut-600f5d.netlify.app"
       - key: VITE_API_URL
-        value: "https://tapsureappdebug.onrender.com"
+        value: "https://tapsure-tib5.onrender.com"
       - key: TAPSURE_DEBUG_HTTP
         value: "0"

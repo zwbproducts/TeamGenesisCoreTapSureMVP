@@ -5,7 +5,7 @@ ignore = "git diff --quiet HEAD^ HEAD -- backend/ Procfile render.yaml start.sh 
 
 [build.environment]
 NODE_VERSION = "18"
-VITE_API_URL = "https://tapsureappdebug.onrender.com"
+VITE_API_URL = "https://tapsure-tib5.onrender.com"
 VITE_POS_REQUIRE_QR = "0"
 
 [[redirects]]
