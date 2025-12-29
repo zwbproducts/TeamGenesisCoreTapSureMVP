@@ -10,6 +10,10 @@ from .config import get_pos_tenant_secrets
 from .debug_logging import APIDebugLoggingMiddleware, configure_debug_logging
 from .pos_qr import decode_qr_texts, get_nonce_store, verify_token
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = FastAPI(title="TapSure Agentic MVP", version="0.1.0")
 
