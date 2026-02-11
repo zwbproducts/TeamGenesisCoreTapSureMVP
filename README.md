@@ -1,10 +1,16 @@
-# TapSure Agentic MVP
+# TapSure — Agentic Insurance MVP
 
-An event-driven multi-agent insurance MVP: upload a receipt, get instant coverage recommendations, and confirm protection.
+**Team Genesis Core** — A production-grade, event-driven multi-agent insurance platform built to revolutionize how merchants and consumers interact with instant coverage.
 
-Stack
-- Backend: FastAPI + simple agent modules (OpenAI optional)
-- Frontend: Vanilla HTML/CSS/JS (mobile-first)
+Upload a receipt. Get intelligent coverage recommendations in milliseconds. Confirm protection. Repeat.
+
+**Designed and architected by [Zebbediah Winston Beck](https://github.com/zebbediah) — CEO/Founder/Chief Software Architect at Zero Gravity Engineering (Pty) Ltd**
+
+## Technology Stack
+
+- **Backend**: FastAPI + composable agent modules (OpenAI-compatible LLM optional, graceful heuristic fallbacks)
+- **Frontend**: Mobile-first vanilla HTML/CSS/JS + Tesseract.js OCR
+- **Architecture**: Event-driven orchestrator pattern with pluggable agents (ReceiptAnalyzer, CoverageRecommender, ConversationalAgent)
 
 Quick start
 1) Backend
