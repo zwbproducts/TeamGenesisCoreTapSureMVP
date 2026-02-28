@@ -16,16 +16,23 @@ function App() {
   const { receipt, reset } = useInsuranceStore()
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      {/* Punk Grunge Background Effects */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/15 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-green-500/10 rounded-full blur-3xl animate-pulse delay-2000" />
+      </div>
+
       {/* Header */}
-      <header className="sticky top-0 z-30 bg-white/80 backdrop-blur-lg border-b border-gray-200 shadow-sm">
+      <header className="sticky top-0 z-30 bg-gray-900/80 backdrop-blur-xl border-b border-gray-700 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
         <div className="max-w-2xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-700 flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-xl">T</span>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center shadow-[0_0_15px_rgba(236,72,153,0.5)]">
+              <span className="text-white font-bold text-xl tracking-wider">T</span>
             </div>
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-700 bg-clip-text text-transparent">
-              TapSure
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent tracking-wider">
+              TAPSURE
             </h1>
           </div>
           
@@ -35,31 +42,31 @@ function App() {
                 variant="ghost"
                 size="sm"
                 onClick={() => {
-                  if (confirm('Start over? This will clear your current session.')) {
+                  if (confirm('START OVER? THIS WILL CLEAR YOUR CURRENT SESSION.')) {
                     reset()
                   }
                 }}
-                className="text-gray-600"
+                className="text-gray-400 hover:text-white hover:bg-gray-800 border border-gray-700"
               >
                 <RefreshCcw className="w-4 h-4" />
-                <span className="hidden sm:inline">Reset</span>
+                <span className="hidden sm:inline uppercase tracking-wider text-xs">Reset</span>
               </Button>
             )}
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setShowModal(true)}
-              className="text-primary"
+              className="text-pink-400 hover:text-pink-300 hover:bg-pink-900/20 border border-pink-500/30"
             >
               <HelpCircle className="w-4 h-4" />
-              <span className="hidden sm:inline">How It Works</span>
+              <span className="hidden sm:inline uppercase tracking-wider text-xs">How It Works</span>
             </Button>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="max-w-2xl mx-auto px-4 py-6 space-y-6">
+      <main className="max-w-2xl mx-auto px-4 py-6 space-y-6 relative z-10">
         {/* Upload Section */}
         <ReceiptUpload />
         
@@ -68,8 +75,12 @@ function App() {
 
         {receipt?.pos_qr_verified && (
           <div className="flex justify-end">
-            <Button type="button" onClick={() => setShowDashboards((v) => !v)}>
-              {showDashboards ? 'Hide Dashboards' : 'Open Dashboards'}
+            <Button 
+              type="button" 
+              onClick={() => setShowDashboards((v) => !v)}
+              className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white border-2 border-pink-500 shadow-[0_0_15px_rgba(236,72,153,0.3)] uppercase tracking-wider text-sm"
+            >
+              {showDashboards ? 'HIDE DASHBOARDS' : 'OPEN DASHBOARDS'}
             </Button>
           </div>
         )}
@@ -87,14 +98,14 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="max-w-2xl mx-auto px-4 py-8 text-center text-sm text-gray-500">
-        <p>© 2025 TapSure. Instant insurance for everyday purchases.</p>
-        <p className="mt-2">
-          <a href="#" className="text-primary hover:underline">Terms</a>
+      <footer className="max-w-2xl mx-auto px-4 py-8 text-center text-sm text-gray-500 relative z-10 border-t border-gray-700">
+        <p className="uppercase tracking-wider">© 2025 TAPSURE. INSTANT INSURANCE FOR EVERYDAY PURCHASES.</p>
+        <p className="mt-2 uppercase tracking-wider text-xs">
+          <a href="#" className="text-pink-400 hover:text-pink-300 hover:underline">Terms</a>
           {' • '}
-          <a href="#" className="text-primary hover:underline">Privacy</a>
+          <a href="#" className="text-pink-400 hover:text-pink-300 hover:underline">Privacy</a>
           {' • '}
-          <a href="#" className="text-primary hover:underline">Support</a>
+          <a href="#" className="text-pink-400 hover:text-pink-300 hover:underline">Support</a>
         </p>
       </footer>
 
